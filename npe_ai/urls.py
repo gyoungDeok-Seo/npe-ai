@@ -18,6 +18,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
+from npe_ai.views import ReplyFilterAPI
+
 urlpatterns = [
+    path("ai/api/replyFilters/", ReplyFilterAPI.as_view(), name="replyFilters"),
     path("admin/", admin.site.urls),
 ]
