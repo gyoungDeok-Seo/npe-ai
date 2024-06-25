@@ -18,9 +18,11 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from npe_ai.views import ReplyFilterAPI
+from npe_ai.views import ReplyFilterAPI, AnswerReportAPI, ReplyReportAPI
 
 urlpatterns = [
     path("ai/api/replyFilters/", ReplyFilterAPI.as_view(), name="replyFilters"),
+    path("ai/api/answerReport/", AnswerReportAPI.as_view(), name="answerReport"),
+    path("ai/api/replyReport/", ReplyReportAPI.as_view(), name="replyReport"),
     path("admin/", admin.site.urls),
 ]
